@@ -12,7 +12,7 @@ services:
     ports:
       - 3000
     networks:
-      - dokploy-network
+      - dokploy_dokploy-network
     labels:
       - traefik.enable=true
       - traefik.http.routers.next-app.rule=Host(`test-dokploy.newernew.com`)
@@ -23,5 +23,6 @@ services:
 # Define a network, which allows containers to communicate
 # with each other, by using their container name as a hostname
 networks:
-  dokploy-network:
+  dokploy_dokploy-network:
+    driver: overlay
     external: true
